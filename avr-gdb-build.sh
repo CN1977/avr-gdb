@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME_GDB="gdb-${VER_GDB:-17.2}"
+NAME_GDB="gdb-${VER_GDB:-12.1}"
 NAME_GMP="gmp-6.3.0" # GDB 11+ needs libgmp
 NAME_MPFR="mpfr-4.2.2" # GDB 14+ needs libmpfr
 NAME_EXPAT=("R_2_7_1" "expat-2.7.1") # GDB XML support
