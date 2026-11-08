@@ -151,7 +151,7 @@ fi
 OPTS_GDB="
 	--target=avr
 	--with-static-standard-libraries
-	--with-expat
+	--without-expat
 	--enable-tui
 	--without-python
 	--without-guile
