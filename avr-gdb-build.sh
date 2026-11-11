@@ -461,7 +461,11 @@ buildGDB()
 		confMake $TMP_DIR/$OS-$ARCH "--with-gmp=${TMP_DIR}/${OS}-${ARCH} --disable-shared --enable-static" $HOST
 		cd ../../
 
-		OPTS_LIBS="--with-gmp=${TMP_DIR}/${OS}-${ARCH} --with-mpfr=${TMP_DIR}/${OS}-${ARCH}"
+		OPTS_LIBS="--with-gmp=${TMP_DIR}/${OS}-${ARCH} \
+           --with-mpfr=${TMP_DIR}/${OS}-${ARCH}"
+
+		export CPPFLAGS="-I${TMP_DIR}/${OS}-${ARCH}/include"
+		export LDFLAGS="-L${TMP_DIR}/${OS}-${ARCH}/lib"
 	fi
 
 	log "Expat..."
