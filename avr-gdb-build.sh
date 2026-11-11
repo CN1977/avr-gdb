@@ -482,6 +482,21 @@ buildGDB()
 
 	log "GDB..."
 	cd $NAME_GDB/obj-avr
+
+
+	#
+	#
+	#
+	echo "=== GMP ==="
+	find ${TMP_DIR}/${OS}-${ARCH} | grep gmp
+
+	echo "=== MPFR ==="
+	find ${TMP_DIR}/${OS}-${ARCH} | grep mpfr
+	#
+	#
+	#
+	
+	
 	confMake "$PREFIX" "--enable-static --disable-shared ${OPTS_LIBS} --with-libexpat-prefix=${TMP_DIR}/${OS}-${ARCH} ${OPTS_GDB}" $HOST
 	cd ../../
 
