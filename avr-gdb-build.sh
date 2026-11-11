@@ -74,12 +74,15 @@ suppressError=0
 
 failure()
 {
-	[[ $suppressError -ne 0 ]] && return 0
-	local lineno=$1
-	local msg=$2
-	echo "Failed at $lineno: $msg"
-	echo "  pwd: $CWD"
-	backtrace 2
+    [[ $suppressError -ne 0 ]] && return 0
+    local lineno=$1
+    local msg=$2
+    echo "Failed at $lineno: $msg"
+    echo "  pwd: $CWD"
+
+    find . -name config.log -exec cat {} \;
+
+    backtrace 2
 }
 
 trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
