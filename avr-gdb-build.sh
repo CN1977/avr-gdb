@@ -163,7 +163,7 @@ OPTS_GDB="
 	--without-lzma
 	--without-zstd
 	--without-babeltrace
-	--disable-source-highlight
+	--enable-source-highlight
 	--without-libiconv-prefix
 "
 
